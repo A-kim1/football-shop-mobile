@@ -75,3 +75,55 @@ Contoh: menjalankan ulang aplikasi dari awal (mirip kyk restart biasa aja).
 Jadi intinya, 
 - hot reload = update cepat tanpa kehilangan data,
 - hot restart = mulai ulang aplikasi sepenuhnya (restart penuh).
+
+-------------------------------------------------------------------------------------
+TUGAS 2
+
+1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
+
+JWB:
+Navigator.push(): digunain utk buka halaman baru di atas halaman sebelumnya. (kyk stack biasa aja)
+Intinya, pengguna masih bisa kembali ke halaman sebelumnya dengan menekan tombol back.
+- Contoh nya di Football Shop: saat mencet tombol "Create Product", aplikasi aku ini pake Navigator.push() utk pindah ke halaman form produk nya, biar pengguna bisa kembali ke menu utama setelah selesai.
+
+Navigator.pushReplacement(): digunain utk mengganti halaman yg sedang ditampilkan dengan halaman baru, jadi dia gk bisa balik ke halaman sebelumnya.
+- Contoh nya di Football Shop: digunain pada LeftDrawer, misalnya saat pengguna pencet menu "Home" atau "Add Product" di Drawer. Tujuannya itu biar ketika berpindah antarhalaman lewat menu samping (side menu) nya gitu, gk ada tumpukan halaman yg menumpuk dan navigasi nya jadi lebih bersih.
+
+
+2. Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+
+JWB:
+Di aplikasi Football Shop aku ini, struktur tiap halaman nya dibuat konsisten dengan memakai hierarchy widget utama, yaitu:
+    - Scaffold: Sebagai kerangka dasar halaman nya gitu (sediain struktur body, app bar, dan drawer nya).
+
+    - AppBar: Nampilin judul halaman di bagian atas agar pengguna tahu halaman apa yg sedang dibuka.
+
+    - Drawer: Isinya adlh menu navigasi agar pengguna mudah berpindah antarhalaman seperti "Home" dan "Create Product".
+
+Dengan adanya struktur yg kyk gini, semua halaman nya akan terlihat seragam, rapi, dan mudah digunain.
+
+
+3. Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+
+JWB:
+Intinya ketiga widget yg disebutin di soal itu berfungsi utk mengatur tata letak (layout) agar form nya tetap nyaman digunain di berbagai ukuran layar.
+
+- Padding: Kasih jarak antar elemen biar tampilan nya gk nempel2 dan lebih nyaman utk dilihat.
+  Contoh: digunakan pada setiap TextFormField di halaman form produk supaya form terlihat rapi.
+
+- SingleChildScrollView: Membuat halaman yg bisa discroll ke bawah kalo isinya banyak, jadi form tetap bisa diisi di layar kecil.
+  Contoh: digunakan pada dialog konfirmasi "Save Product".
+
+- ListView: Digunain untuk nampilin daftar elemen dalam bentuk list yang bisa discroll, cocok untuk daftar produk nantinya.
+  Contoh: digunakan di dlm Drawer untuk nampung menu seperti "Home" dan "Add Product", sehingga kalo nanti menu nya bertambah banyak, pengguna tetep bisa scroll ke bawah tanpa kepotong gituu.
+
+Dengan ketiga widget ini, tampilan form nya bakal jadi lebih fleksibel, rapi, dan user friendly.
+
+4. Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+
+JWB:
+
+Aplikasi Football Shop aku ini pake tema warna utama (primary color) yg diatur di file main.dart nyaa.
+Warna ini digunain secara konsisten gitu pada elemen2 seperti AppBar, tombol, dan ikon.
+
+Misalnya, tombol "Create Product" itu aku kasih warna merah, biar pengguna bisa dengan gampang tau bahwa ttg tombol itu serta kegunaanya, sedangkan pada AppBar nya aku pake warna yang senada/konsisten dgn primary color app aku ini biar tampilannya seragam/konsisten di seluruh halaman nyaa.

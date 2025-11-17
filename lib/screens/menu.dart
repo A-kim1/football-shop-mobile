@@ -14,7 +14,8 @@ class MyHomePage extends StatelessWidget {
   final List<ItemHomepage> items = [
     ItemHomepage("All Products", Icons.store, Colors.blue),
     ItemHomepage("My Products", Icons.shopping_bag, Colors.green),
-    ItemHomepage("Create Product", Icons.add_circle, Colors.red),
+    ItemHomepage("Create Product", Icons.add_circle, Colors.deepOrangeAccent),
+    ItemHomepage("Logout", Icons.logout, Colors.red),
   ];
 
     @override
@@ -35,6 +36,7 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       drawer: const LeftDrawer(), // tambahkan ini --> utk left drawer nyaa
+      
       // Body halaman dengan padding di sekelilingnya.
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -117,6 +119,9 @@ class InfoCard extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         // Menyusun title dan content secara vertikal.
         child: Column(
+          // beda widget child dan children:
+          // child: untuk satu widget saja
+          // children: untuk banyak widget dalam bentuk array/list
           children: [
             Text(
               title,
